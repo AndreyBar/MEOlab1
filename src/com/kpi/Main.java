@@ -15,7 +15,9 @@ public class Main {
         // Write alternatives to data
         String[] altNames = getNames("Please, enter the alternative names:", altQty, s);
         data[0][0] = null;
-        if (altQty - 1 >= 0) System.arraycopy(altNames, 0, data[0], 1, altQty - 1);
+        for (int i = 1; i < altQty + 1; i++) {
+            data[0][i] = altNames[i - 1];
+        }
 
         // Write headers
         data[0][data[0].length - 1] = "SUM";
